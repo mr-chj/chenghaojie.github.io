@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="swiper.min.css" />
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="box">
+
+				<!--导航-->
+				<div class="a">
+
+					<div class="n_wrap">
+						<div class="ap_left">
+							<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cDovLzVkMGM3M2Y4N2QzNzgudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNi8zMzQwN2NjZTgwOTkxOWM2NmFmY2NkNjExYmQ1MjFkOS5wbmc_p_p100_p_3D.png" />
+						</div>
+						<ul class="ap_list">
+							<li>
+								<a href="#/">首页</a>
+							</li>
+							<li v-for="(i,index) in arr" :key="index">
+								<a :href="'#/no'+(index+2)+'/'+i.c">{{i.t}}</a>
+							</li>
+						</ul>
+						<div class="ap_right">
+							<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cDovLzVkMGM3M2Y4N2QzNzgudDczLnFpZmVpeWUuY29tL3FmeS1jb250ZW50L3VwbG9hZHMvMjAxOS8wNi9kYTgxYWUzMjU2M2IxY2EzYzU2MmU0ZjJiMGZiNTlkMS0yM3gxNS5wbmc_p_p100_p_3D.png" />
+						</div>
+					</div>
+
+				</div>
+				<!--导航结束-->
+
+			</div>
+			<keep-alive>
+				<router-view></router-view>
+			</keep-alive>
+		</div>
+
+		<template id="s_no1">
+			<div>
+				<div class="idx">
+					<div class="aa">
+						<div class="s_content">
+							<div style="flex: 1;font-family:微軟正黑體;font-size:70px;font-weight:bold;font-style:normal;color:#ffffff;">
+								<div style="height: 400px;">
+									<span id="z_nna"></span>
+								</div>
+								<div class="le_con">
+									<p>背着背包的路上，听过许多故事，见过旅行风景。</p>
+									<p>流转的时光，都成为命途中的点缀，</p>
+									<p>不言不语都是好风景。</p>
+								</div>
+								<div>
+									<p style="font-size: 16px;padding-top: 40px;">CUSTOM<span style="display: inline-block; color: blue; font-weight: bold;font-size: 10px; margin-left: 15px;">——</span></p>
+								</div>
+							</div>
+							<div style="flex: 1;">
+								<div style="color: white;">
+									<div>
+										<p style="font-size: 24px;">海拔</p>
+										<times :num='1650' style='display: inline-block; font-size: 37px;'></times>
+										<span style="font-size: 37px;">m</span>
+									</div>
+									<div>
+										<p style="font-size: 24px;">路线</p>
+										<times :num='7' style='display: inline-block; font-size: 37px;'></times>
+									</div>
+									<div>
+										<p style="font-size: 24px;">游客/年</p>
+										<times :num='3000' style='display: inline-block; font-size: 37px;'></times>
+										<span style="font-size: 37px;">+</span>
+									</div>
+								</div>
+								<div class="c_banner">
+									<div class="swiper-container a_ul">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide li" v-for="i in arr"><img :src="i.img" /></div>
+										</div>
+										<!-- Add Arrows -->
+									</div>
+									<div class="swiper-button-next b_next"></div>
+									<div class="swiper-button-prev b_prev"></div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="c_container">
+					<div class="row">
+						<div style="display: flex;">
+							<div style="flex:7; min-height: 200px;">
+								<div class="banner2">
+									<div class="swiper-container b_ul2">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide u2_li" v-for="i in arr2">
+												<img :src="i.img" />
+												<p style="padding-top: 45px;">{{i.tit}}</p>
+												<p style="padding-top: 10px; color: #379cf4;"><span>{{i.distance}}</span>　　<span>{{i.days}}</span></p>
+												<p style="padding-top: 25px; color: #379cf4;">{{i.content}}</p>
+											</div>
+										</div>
+										<!-- Add Pagination -->
+									</div>
+									<div class="btn">
+										<div class="dian b_prev2">
+											<</div>
+												<div class="dian b_next2">></div>
+										</div>
+									</div>
+								</div>
+
+								<div style="flex:3; min-height: 200px;">
+									<h2>RECOMM</h2>
+									<p>精选当季热门目的地<span style="font-size: 22px;color: blue;margin-left: 10px;">一</span></p>
+									<p style="padding-top: 40px;padding-right: 60px;">偶尔为街头独特的风景驻足，偶尔因高山流水的美丽停留，偶尔被惊鸿一瞥的美丽吸引；或者在春暖花开时，或者在河边放下一盏写着心愿的河灯，祝愿一切安好。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<lee></lee>
+					</div>
+				</div>
+		</template>
+
+		<template id="in_no2">
+			<div>
+				<div class="in_no2">
+					<div class="aa">
+						<he>
+							<span slot="hec">
+									{{$route.params.c}}
+								</span>
+						</he>
+					</div>
+				</div>
+				<div class="no2_cont">
+					<div class="c_body">
+						<div>
+							当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。
+						</div>
+						<div>
+							起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可完成自己的网站，起飞页用户的最短建站时间纪录为30分钟。起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体，支持打字传图，不需要专业编写代码，也没有其他建站工具的层叠式烦恼，您可以随心所欲创建区块、添加组件…
+						</div>
+						<div class="banner3">
+							<!-- Swiper -->
+							<div class="swiper-container banner3_container">
+								<div class="swiper-wrapper b3_ul">
+									<div class="swiper-slide b3_li"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNjAweDMwMC5qcGc_p_p100_p_3D.jpg" /></div>
+									<div class="swiper-slide b3_li"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtNjAweDMwMC5qcGc_p_p100_p_3D.jpg" /></div>
+									<div class="swiper-slide b3_li"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNjAweDMwMC5qcGc_p_p100_p_3D.jpg" /></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="no2_cont2">
+					<div class="c_body2">
+						<h2>TOUR GUIDE</h2>
+						<div class="b_tit">
+							<span class="b_le"></span>
+							<span>旅行顾问推荐最好玩儿的地方</span>
+							<span class="b_le"></span>
+						</div>
+						<div class="b_cont">
+							<div class="co_box" v-for="(i,$index) in arr">
+								<img :src="i.img" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<lee></lee>
+			</div>
+		</template>
+
+		<template id="path_no3">
+			<div>
+				<div class="in_no2">
+					<div class="aa">
+						<he>
+							<span slot="hec">
+									{{$route.params.c}}
+								</span>
+						</he>
+
+					</div>
+				</div>
+				<div class="no3_cont">
+					<div class="cont_temp" v-for="i in arr">
+						<div><img :src="i.img" /></div>
+						<h2 style="padding: 10px 0px;">{{i.tit}}</h2>
+						<div style="padding: 6px 20px 5px 20px;">
+							<span style="margin-right: 15px;">{{i.distance}}</span>
+							<span>{{i.days}}</span>
+						</div>
+						<div style="padding: 20px;">
+							{{i.cont}}
+						</div>
+					</div>
+				</div>
+				<lee></lee>
+			</div>
+		</template>
+
+		<template id="strategy_no4">
+			<div>
+				<div class="in_no2">
+					<div class="aa">
+
+						<he>
+							<span slot="hec">
+									{{$route.params.c}}
+								</span>
+						</he>
+
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template id="touch_no5">
+			<div>
+				<div class="in_no2">
+					<div class="aa">
+
+						<he>
+							<span slot="hec">
+									{{$route.params.c}}
+								</span>
+						</he>
+
+					</div>
+				</div>
+				<div style="width: 1200px; height: 400px; margin: 0 auto;padding: 100px 0 40px 0;">
+					<iframe src="map.html" width="1200px" height="400px" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+				</div>
+				<lee></lee>
+			</div>
+		</template>
+
+		<template id="foot">
+			<div>
+
+				<div class="footer">
+					<div class="footers">
+						<div style="display:flex;">
+							<div style="flex: 1;">
+								<h2 style="color: white;">TRAVEL</h2>
+								<div class="jie">
+									<p>我公司会以安全、快乐、环保为理念，以敬业、诚信、善良为本，期待与全国各地的户外公司、户外俱乐部、旅行社进行合作。</p>
+								</div>
+							</div>
+							<div style="flex: 1;">
+								<h2 style="color: white;">TRAVEL</h2>
+								<div class="jie">
+									<p>—　深圳市南京路双港码头6楼</p>
+									<p>—　123@admin.com</p>
+									<p>—　011-555-12345</p>
+								</div>
+							</div>
+							<div style="flex: 1;">
+								<ul class="f_ul">
+									<li style="background: url('//fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png');background-position: -320px 0;"></li>
+									<li style="background: url('//fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png');background-position: -384px 0;"></li>
+									<li style="background: url('//fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png');background-position: -64px 0;"></li>
+									<li style="background: url('//fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png');"></li>
+								</ul>
+								<div class="jie">
+									<p>强大专业的户外产品汇集平台，为您提供徒步、登山、露营、摄影、航海、越野等多种方式探索大自然。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="padding:15px 0 15px 0;background: #13304a; border-top: 1px solid #ccc;">
+					<div class="section">
+						<p>Copyright © 2019 户外探险模板 All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="he">
+			<div>
+				<div class="g_content">
+					<h2>DESTINATION</h2>
+					<div class="head">
+						<span class="h_le"></span>
+						<span><slot name="hec"></slot></span>
+						<span class="h_le"></span>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="times">
+			<div>
+				<div class="comp">
+					<div style="font-size: 37px;">{{nums}}</div>
+				</div>
+			</div>
+		</template>
+	</body>
+
+</html>
+<script src="vue.js"></script>
+<script src="vue-router.js"></script>
+<script>
+	window.onload = function() {
+		var num = -1
+		var arr = ['探', '索', '</br>', '山', '野', '秘', '境', '</br>', '发', '现', '纯', '粹', '自', '我']
+		console.log(z_nna)
+		var timer = setInterval(() => {
+			num++
+			document.getElementById('z_nna').innerHTML += arr[num]
+			if(num == arr.length - 1) {
+				clearTimeout(timer)
+			}
+		}, 80)
+	}
+	Vue.component('lee', {
+		template: '#foot',
+	})
+	Vue.component('he', {
+		template: '#he',
+	})
+	Vue.component('times', {
+		template: '#times',
+		props: ['num'],
+		data(){
+			return {
+				num:this.num,
+				nums:0,
+			}
+		},
+		mounted() {
+			var time = setInterval(() => {
+				this.nums++
+					if(this.nums >= this.num) {
+						clearInterval(time)
+					}
+			}, 3000 / this.num)
+		}
+	})
+	var router = new VueRouter({
+		routes: [{
+				path: '/',
+				component: {
+					template: '#s_no1',
+					data() {
+						return {
+							arr: [{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNDAweDI5MC5qcGc_p_p100_p_3D.jpg'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNDAweDI5MC5qcGc_p_p100_p_3D.jpg'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtNDAweDI5MC5qcGc_p_p100_p_3D.jpg'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtNDAweDI5MC5qcGc_p_p100_p_3D.jpg'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctNDAweDI5MC5qcGc_p_p100_p_3D.jpg'
+								},
+							],
+							arr2: [{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									distance: 'Distance:3.5km',
+									days: 'Days:2',
+									content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									distance: 'Distance:3.5km',
+									days: 'Days:2',
+									content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									distance: 'Distance:3.5km',
+									days: 'Days:2',
+									content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									distance: 'Distance:3.5km',
+									days: 'Days:2',
+									content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									distance: 'Distance:3.5km',
+									days: 'Days:2',
+									content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									distance: 'Distance:3.5km',
+									days: 'Days:2',
+									content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...'
+								},
+							],
+
+						}
+					},
+
+				},
+			},
+			{
+				path: '/no2/:c',
+				component: {
+					template: '#in_no2',
+					data() {
+						return {
+							arr: [{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgxOTkyZmMxZjMxNjY1YmM2YjFhMzExNzBlNGVlNTgtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNzI1MzQ5YmE4OWM0OGU4NTUyMDE2OTkzODk1OWZiMGQtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZmZiYzdlMDFhZGFjZjRhNWVmZWFlMTQ5N2Y2MGYyM2UtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvM2Q2OWEyYjFlZWJjNWIxYjIxZWRiZTQ2ZGU1Mzg0ODktMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTY1MTEzYTg0YTFkNzRiYzM0YjYwM2FhM2NmYWJjNjUtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNDkzMGJiZmU2NzM2ZjA2NzAyOTI1N2UwYjBhNGUxYzUtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMDIzODAyNGRmMjA3MzZhODU4MWUxYzk3ZTViY2Y0ZDMtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOGMyNDZlM2M3ZjAzOWZmOGFlYTIwOTg4ZjFjOGJhNzQtMjAweDIwMC5qcGc_p_p100_p_3D.jpg',
+									tit: 'Nannie',
+									cont: '我喜欢出发。凡是到达了的地方，都属于昨天。哪怕那山再青，那水再秀，那风再温柔。'
+								},
+							],
+							num: 0
+						}
+					},
+					methods: {
+
+					}
+				},
+			},
+			{
+				path: '/no3/:c',
+				component: {
+					template: '#path_no3',
+					data() {
+						return {
+							arr: [{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '织金大峡谷',
+									cont: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									distance: 'Distance:8.5km',
+									days: 'Days:7'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '青龙洞',
+									cont: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									distance: 'Distance:8.5km',
+									days: 'Days:7'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '乌兰布统草原',
+									cont: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									distance: 'Distance:8.5km',
+									days: 'Days:7'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '格凸河',
+									cont: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									distance: 'Distance:8.5km',
+									days: 'Days:7'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '玉龙沙湖',
+									cont: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									distance: 'Distance:8.5km',
+									days: 'Days:7'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									tit: '梵净山',
+									cont: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。',
+									distance: 'Distance:8.5km',
+									days: 'Days:7'
+								},
+							]
+						}
+					}
+				}
+			},
+			{
+				path: '/no4/:c',
+				component: {
+					template: '#strategy_no4'
+				}
+			},
+			{
+				path: '/no5/:c',
+				component: {
+					template: '#touch_no5'
+				}
+			},
+		]
+	})
+
+	new Vue({
+		el: '#box',
+		router,
+		data: {
+			arr: [{
+					t: '关于',
+					c: '背上行囊去远方1，那个梦寐以求的目的地。'
+
+				},
+				{
+					t: '路线',
+					c: '背上行囊去远方2，那个梦寐以求的目的地。'
+				},
+				{
+					t: '攻略',
+					c: '背上行囊去远方3，那个梦寐以求的目的地。'
+				},
+				{
+					t: '联系',
+					c: '背上行囊去远方4，那个梦寐以求的目的地。'
+				}
+			]
+		},
+		created() {
+
+		}
+	})
+</script>
+<script src="swiper.min.js"></script>
+<script>
+	var swiper = new Swiper('.a_ul', {
+		slidesPerView: 2,
+		spaceBetween: 20,
+		loop: true,
+		navigation: {
+			nextEl: '.b_next',
+			prevEl: '.b_prev',
+		},
+	});
+
+	var swiper = new Swiper('.b_ul2', {
+		slidesPerView: 2,
+		spaceBetween: 20,
+		loop: true,
+		navigation: {
+			nextEl: '.b_next2',
+			prevEl: '.b_prev2',
+		},
+	});
+
+	var swiper = new Swiper('.banner3_container', {
+		loop: true,
+	});
+</script>
+
+<script>
+	! function(mapInit) { 
+		var script = document.createElement("script"); 
+		script.type = "text/javascript"; 
+		script.src = "http://api.map.baidu.com/api?v=2.0&ak=" + '//api.map.sogou.com/engine/api/static/image+parameters.png' + "&callback=mapinit"; 
+		window['mapinit'] = function() {  
+			mapInit(); 
+		}; 
+		document.head.appendChild(script);  //统计页面
+		 
+		APP.ajax('nearby/stat_nearby_me.html', {});
+	}(function() { 
+		var map = new BMap.Map("container"); // 创建Map实例
+		console.log(map)
+		map.centerAndZoom("绥棱县长山乡阁山", 11); // 初始化地图,设置中心点坐标和地图级别
+		//console.log(map)
+		document.getElementById('container').style.height = window.innerHeight + 'px'
+	});
+</script>
+
+<script>
+	var a = document.querySelector('.a')
+	window.onscroll = function() {
+		var st = document.documentElement.scrollTop || document.body.scrollTop;
+		console.log(document.documentElement.scrollTop)
+		if(st > 100) {
+			a.style.position = 'fixed'
+			a.style.left = '0'
+			a.style.top = '0'
+			a.style.width = '100' + '%'
+			a.style.background = '#379cf4'
+			a.style.zIndex = '5'
+			a.style.height = '50' + 'px'
+		} else {
+			a.style.position = 'static'
+			a.style.padding = '12' + 'px'
+			a.style.backgroundColor = 'transparent'
+		}
+		console.log(st)
+	}
+</script>
+<script>
+</script>

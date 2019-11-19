@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.navs {
+				width: 100%;
+				line-height: 50px;
+				background: #000000;
+				text-align: center;
+				font-size: 20px;
+				color: white;
+			}
+			
+			.yiji {
+				width: 100%;
+				line-height: 50px;
+				background: #000000;
+				text-align: center;
+				font-size: 20px;
+				color: white;
+				border-top: 1px solid #ccc;
+				position: relative;
+			}
+			/*隐藏到显示前*/
+			
+			.a-enter {
+				opacity: 0;
+				transform: translateY(500px);
+			}
+			
+			.a-enter-active,
+			.b-enter-active {
+				transition: all .5s;
+			}
+			
+			.a-enter-to {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+			
+			.a-leave {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+			
+			.a-leave-active {
+				transition: all .5s;
+			}
+			
+			.a-leave-to {
+				opacity: 0;
+				transform: translateY(500px);
+			}
+			
+			.b-enter {
+				opacity: 0;
+				transform: translateX(500px);
+			}
+			
+			.b-enter-to {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<lee></lee>
+		</div>
+
+		<template id="no1">
+			<div>
+
+				<div class="navs"><span @click="btn">导航</span></div>
+				<div style="position: relative;">
+					<transition name='a'>
+						<div class="shou" v-if="type" style='position: absolute;left: 0;top: 0; width: 100%;'>
+							<div class="navs">首页</div>
+							<div class="yiji" v-for="(i,$key,$index) in arr">
+								<span>{{$key}}</span>
+								<span @click="no2($index)" style="position: absolute;right: 40px; top: 50%;margin-top: -25px;" v-if="i.length">></span>
+							</div>
+						</div>
+					</transition>
+
+					<transition name='b'>
+						<div class="shou" v-show="show">
+							<div class="navs" @click="ret">返回上一级</div>
+							<div class="yiji" v-for="(i,$key,$index) in arr">
+								<div v-if="index==$index" style="border-bottom: 1px solid #ccc;" v-for="a in i">{{a}}</div>
+							</div>
+						</div>
+					</transition>
+				</div>
+
+			</div>
+		</template>
+	</body>
+
+</html>
+<script src="vue.js"></script>
+<script>
+	Vue.component('lee', {
+		template: '#no1',
+
+		data() {
+			return {
+				type: false,
+				show: false,
+				index: 0,
+				arr: {
+					no1: ['no11', 'no22'],
+					no2: [],
+					no3: ['no31', 'no32'],
+					no4: ['no41', 'no42', 'no43'],
+				}
+			}
+		},
+		methods: {
+			btn() {
+				this.type = !this.type
+				this.show = false
+			},
+			no2(index) {
+				this.show = !this.show
+				this.index = index
+				this.type = false
+			},
+			ret(){
+				this.show = false
+				this.type = true
+			}
+		},
+	})
+
+	new Vue({
+		el: '#box'
+	})
+</script>
